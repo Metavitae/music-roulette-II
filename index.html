@@ -134,7 +134,7 @@
     #changePick{background:#1a0a00;font-size:clamp(10px,2.8vw,12px);}
 
     /* ── RESULT OVERLAY ── */
-    #resultOverlay{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(14,7,0,.93);gap:12px;animation:fadeIn .4s ease;}
+    #resultOverlay{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(14,7,0,.95);gap:8px;padding:20px;overflow-y:auto;animation:fadeIn .4s ease;}
     #resultOverlay.show{display:flex;}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
     .overlay-icon{font-size:64px;animation:pop .4s cubic-bezier(.36,1.56,.64,1);}
@@ -169,7 +169,7 @@
   <div class="overlay-artist" id="overlayArtist"></div>
   <div class="overlay-vibe" id="overlayVibe"></div>
   <div class="overlay-countdown" id="overlayCountdown"></div>
-  <a id="overlayYTLink" style="display:none;width:100%;max-width:300px;margin-top:12px;padding:16px;border-radius:3px;font-family:'Rye',cursive;font-size:clamp(13px,3.8vw,16px);letter-spacing:2px;text-align:center;background:#6b1212;color:#f0c040;border:2px solid #f0c040;text-decoration:none;touch-action:manipulation;box-shadow:0 0 15px rgba(240,192,64,0.3);" target="_blank" rel="noopener noreferrer">&#9834; Play on YouTube &#9834;</a>
+  <a id="overlayYTLink" style="display:none;width:100%;max-width:300px;margin-top:12px;padding:18px;border-radius:3px;font-family:'Rye',cursive;font-size:clamp(14px,4vw,17px);letter-spacing:2px;text-align:center;background:#6b1212;color:#f0c040;border:2.5px solid #f0c040;text-decoration:none;touch-action:manipulation;box-shadow:0 0 20px rgba(240,192,64,0.5),inset 0 1px 0 rgba(255,255,255,0.1);" target="_blank" rel="noopener noreferrer">&#9834; Play on YouTube &#9834;</a>
 </div>
 
 <!-- NATIONALITY SCREEN -->
