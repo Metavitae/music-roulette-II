@@ -499,9 +499,7 @@ function showResult(won, artist) {
       countdown.textContent = 'Opening YouTube...';
       stopConfetti();
       resultOverlay.classList.remove('show');
-      // Search YouTube for the artist's most popular song
-      const q = encodeURIComponent(artist + ' most popular song');
-      window.location.href = 'https://www.youtube.com/results?search_query=' + q;
+      openYT(artist);
     }
   }, 1000);
 }
