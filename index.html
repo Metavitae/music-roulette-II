@@ -169,7 +169,30 @@
   <div class="overlay-artist" id="overlayArtist"></div>
   <div class="overlay-vibe" id="overlayVibe"></div>
   <div class="overlay-countdown" id="overlayCountdown"></div>
-  <a id="overlayYTLink" style="display:none;width:100%;max-width:300px;margin-top:12px;padding:18px;border-radius:3px;font-family:'Rye',cursive;font-size:clamp(14px,4vw,17px);letter-spacing:2px;text-align:center;background:#6b1212;color:#f0c040;border:2.5px solid #f0c040;text-decoration:none;touch-action:manipulation;box-shadow:0 0 20px rgba(240,192,64,0.5),inset 0 1px 0 rgba(255,255,255,0.1);" target="_blank" rel="noopener noreferrer">&#9834; Play on YouTube &#9834;</a>
+  <br/>
+  <a id="overlayYTLink" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     style="
+       display:none;
+       width:90%;
+       max-width:300px;
+       padding:20px 10px;
+       margin:0 auto;
+       border-radius:6px;
+       font-family:'Rye',cursive;
+       font-size:18px;
+       letter-spacing:2px;
+       text-align:center;
+       background:#8b0000;
+       color:#ffdd00;
+       border:3px solid #ffdd00;
+       text-decoration:none;
+       touch-action:manipulation;
+       box-shadow:0 0 25px rgba(255,221,0,0.6);
+     ">
+    ♪ PLAY ON YOUTUBE ♪
+  </a>
 </div>
 
 <!-- NATIONALITY SCREEN -->
@@ -483,25 +506,22 @@ function showResult(won, artist) {
   document.getElementById('overlayVibe').textContent = won
     ? "Your instincts are as sharp as a sheriff's aim!"
     : (userPick ? 'You wagered on ' + userPick.name + ' — better luck next spin!' : picked.vibe);
-  resultOverlay.classList.add('show');
 
-  const delay = won ? 3 : 2;
+  const q = encodeURIComponent(artist + ' most popular song');
+  const url = 'https://www.youtube.com/results?search_query=' + q;
+
   const countdown = document.getElementById('overlayCountdown');
-  let secs = delay;
-  countdown.textContent = 'Opening YouTube in ' + secs + '...';
+  countdown.innerHTML = '<a href="' + url + '" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:16px;padding:18px 24px;background:#8b0000;color:#ffdd00;border:3px solid #ffdd00;border-radius:6px;font-family:Rye,cursive;font-size:18px;letter-spacing:2px;text-decoration:none;text-align:center;box-shadow:0 0 25px rgba(255,221,0,0.6);">♪ PLAY ON YOUTUBE ♪</a>';
+
+  resultOverlay.classList.add('show');
   if (won) launchConfetti();
 
-  const timer = setInterval(() => {
-    secs--;
-    if (secs > 0) {
-      countdown.textContent = 'Opening YouTube in ' + secs + '...';
-    } else {
-      clearInterval(timer);
-      countdown.textContent = 'Tap below to play!';
-      stopConfetti();
-      openYT(artist);
-    }
-  }, 1000);
+  // Auto reset after 8 seconds if they don't tap
+  setTimeout(() => {
+    stopConfetti();
+    resultOverlay.classList.remove('show');
+    resetToStart();
+  }, 8000);
 }
 
 function resetWheel() {
