@@ -169,6 +169,7 @@
   <div class="overlay-artist" id="overlayArtist"></div>
   <div class="overlay-vibe" id="overlayVibe"></div>
   <div class="overlay-countdown" id="overlayCountdown"></div>
+  <a id="overlayYTLink" style="display:none;width:100%;max-width:300px;margin-top:8px;padding:13px;border-radius:3px;font-family:'Rye',cursive;font-size:clamp(12px,3.5vw,15px);letter-spacing:2px;text-align:center;background:#8b1212;color:#f0c040;border:1.5px solid #c9952a;text-decoration:none;touch-action:manipulation;" target="_blank" rel="noopener noreferrer">&#9834; Open YouTube &#9834;</a>
 </div>
 
 <!-- NATIONALITY SCREEN -->
@@ -496,9 +497,8 @@ function showResult(won, artist) {
       countdown.textContent = 'Opening YouTube in ' + secs + '...';
     } else {
       clearInterval(timer);
-      countdown.textContent = 'Opening YouTube...';
+      countdown.textContent = 'Tap below to play!';
       stopConfetti();
-      resultOverlay.classList.remove('show');
       openYT(artist);
     }
   }, 1000);
