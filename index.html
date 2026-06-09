@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8"/><!-- v4 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"/>
   <meta name="theme-color" content="#0e0700"/>
   <meta name="mobile-web-app-capable" content="yes"/>
@@ -10,6 +10,8 @@
   <meta name="apple-mobile-web-app-title" content="Music Roulette"/>
   <title>Music Roulette</title>
   <link href="https://fonts.googleapis.com/css2?family=Rye&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3CradialGradient id='bg' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%231c1005'/%3E%3Cstop offset='100%25' stop-color='%230e0700'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='90' fill='url(%23bg)'/%3E%3Crect x='12' y='12' width='488' height='488' rx='80' fill='none' stroke='%23c9952a' stroke-width='5'/%3E%3Ccircle cx='256' cy='220' r='160' fill='%230e0700' stroke='%23c9952a' stroke-width='3'/%3E%3Ctext x='256' y='228' font-size='140' text-anchor='middle' font-family='serif' fill='%23f0c040'%3E✦%3C/text%3E%3Crect x='60' y='400' width='392' height='70' rx='4' fill='%231c1005' stroke='%23c9952a' stroke-width='2'/%3E%3Ctext x='256' y='425' font-size='13' text-anchor='middle' fill='%23c9952a' font-family='Georgia,serif' letter-spacing='4'%3E~ MUSIC ~%3C/text%3E%3Ctext x='256' y='455' font-size='26' text-anchor='middle' fill='%23f0c040' font-family='Georgia,serif' font-weight='bold' letter-spacing='5'%3EROULETTE%3C/text%3E%3C/svg%3E"/>
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3CradialGradient id='bg' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%231c1005'/%3E%3Cstop offset='100%25' stop-color='%230e0700'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='90' fill='url(%23bg)'/%3E%3Crect x='12' y='12' width='488' height='488' rx='80' fill='none' stroke='%23c9952a' stroke-width='5'/%3E%3Ccircle cx='256' cy='220' r='160' fill='%230e0700' stroke='%23c9952a' stroke-width='3'/%3E%3Ctext x='256' y='228' font-size='140' text-anchor='middle' font-family='serif' fill='%23f0c040'%3E✦%3C/text%3E%3Crect x='60' y='400' width='392' height='70' rx='4' fill='%231c1005' stroke='%23c9952a' stroke-width='2'/%3E%3Ctext x='256' y='425' font-size='13' text-anchor='middle' fill='%23c9952a' font-family='Georgia,serif' letter-spacing='4'%3E~ MUSIC ~%3C/text%3E%3Ctext x='256' y='455' font-size='26' text-anchor='middle' fill='%23f0c040' font-family='Georgia,serif' font-weight='bold' letter-spacing='5'%3EROULETTE%3C/text%3E%3C/svg%3E"/>
   <style>
     :root {
       --bg:#0e0700; --surface:#1c1005;
@@ -52,64 +54,52 @@
     .logo-rule hr{flex:1;border:none;border-top:1px solid var(--gold);opacity:.4;}
     .logo-rule span{font-family:'Rye',cursive;font-size:clamp(6px,1.8vw,8px);color:var(--gold);letter-spacing:3px;}
 
-    /* ── NATIONALITY SCREEN ── */
-    #natScreen{
-      justify-content:space-between;
-      padding:calc(var(--safe-top) + 16px) 20px calc(var(--safe-bot) + 24px);
-      gap:16px;
-    }
+    /* NAT SCREEN */
+    #natScreen{justify-content:space-between;padding:calc(var(--safe-top) + 16px) 20px calc(var(--safe-bot) + 24px);gap:16px;}
     .nat-label{font-family:'Rye',cursive;font-size:clamp(12px,3.5vw,16px);color:var(--gold);letter-spacing:2px;text-align:center;flex-shrink:0;}
     .nat-sub{font-style:italic;font-size:clamp(9px,2.5vw,12px);color:var(--muted);text-align:center;margin-top:-10px;flex-shrink:0;}
     .nat-cards{display:flex;flex-direction:column;gap:14px;width:100%;max-width:320px;flex:1;justify-content:center;}
-    .nat-card{
-      display:flex;align-items:center;gap:16px;
-      padding:18px 20px;border-radius:4px;
-      background:var(--surface);border:1.5px solid rgba(201,149,42,.3);
-      cursor:pointer;touch-action:manipulation;transition:all .15s;
-      -webkit-user-select:none;user-select:none;
-    }
+    .nat-card{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:4px;background:var(--surface);border:1.5px solid rgba(201,149,42,.3);cursor:pointer;touch-action:manipulation;transition:all .15s;-webkit-user-select:none;user-select:none;}
     .nat-card:active{transform:scale(0.97);}
-    .nat-card:hover{border-color:var(--gold);background:#2a1808;}
     .nat-flag{font-size:36px;flex-shrink:0;}
     .nat-info{flex:1;}
     .nat-name{font-family:'Rye',cursive;font-size:clamp(14px,4vw,18px);color:var(--gold2);letter-spacing:2px;}
     .nat-desc{font-style:italic;font-size:clamp(9px,2.5vw,11px);color:var(--muted);margin-top:3px;}
     .nat-arrow{color:var(--gold);font-size:20px;opacity:.6;}
 
-    /* ── PICK SCREEN ── */
+    /* PICK SCREEN */
     #pickScreen{justify-content:space-between;padding:calc(var(--safe-top) + 8px) 16px calc(var(--safe-bot) + 12px);gap:10px;}
     .pick-label{font-family:'Rye',cursive;font-size:clamp(11px,3vw,14px);color:var(--gold);letter-spacing:2px;text-align:center;flex-shrink:0;}
     .pick-sub{font-style:italic;font-size:clamp(9px,2.5vw,11px);color:var(--muted);text-align:center;margin-top:-6px;flex-shrink:0;}
-    .nat-badge{
-      font-family:'Rye',cursive;font-size:clamp(9px,2.5vw,11px);
-      color:var(--muted);text-align:center;letter-spacing:1px;flex-shrink:0;
-    }
+    .nat-badge{font-family:'Rye',cursive;font-size:clamp(9px,2.5vw,11px);color:var(--muted);text-align:center;letter-spacing:1px;flex-shrink:0;}
     .nat-badge span{color:var(--gold);}
     .genre-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:360px;flex:1;align-content:center;}
-    .genre-pick-btn{
-      padding:10px 4px;border-radius:3px;
-      font-family:'Rye',cursive;font-size:clamp(9px,2.5vw,11px);
-      letter-spacing:1px;cursor:pointer;text-align:center;
-      background:var(--surface);color:var(--gold);
-      border:1.5px solid rgba(201,149,42,.4);
-      transition:all .15s;touch-action:manipulation;-webkit-user-select:none;user-select:none;
-    }
+    .genre-pick-btn{padding:10px 4px;border-radius:3px;font-family:'Rye',cursive;font-size:clamp(9px,2.5vw,11px);letter-spacing:1px;cursor:pointer;text-align:center;background:var(--surface);color:var(--gold);border:1.5px solid rgba(201,149,42,.4);transition:all .15s;touch-action:manipulation;-webkit-user-select:none;user-select:none;}
     .genre-pick-btn:active{transform:scale(0.95);}
     .genre-pick-btn.selected{background:var(--red);color:var(--gold2);border-color:var(--gold2);box-shadow:0 0 10px rgba(240,192,64,.3);}
-    .pick-confirm{
-      width:100%;max-width:360px;padding:14px;border-radius:3px;
-      font-family:'Rye',cursive;font-size:clamp(13px,3.5vw,15px);
-      letter-spacing:2px;cursor:pointer;background:#2a1a08;color:var(--muted);
-      border:1.5px solid var(--muted);transition:all .2s;touch-action:manipulation;flex-shrink:0;
-    }
+    .pick-confirm{width:100%;max-width:360px;padding:14px;border-radius:3px;font-family:'Rye',cursive;font-size:clamp(13px,3.5vw,15px);letter-spacing:2px;cursor:pointer;background:#2a1a08;color:var(--muted);border:1.5px solid var(--muted);transition:all .2s;touch-action:manipulation;flex-shrink:0;}
     .pick-confirm.ready{background:var(--red);color:var(--gold2);border-color:var(--gold);}
     .pick-confirm.ready:active{transform:scale(0.97);}
 
-    /* ── WHEEL SCREEN ── */
+    /* WHEEL SCREEN */
     #wheelScreen{justify-content:space-between;padding:calc(var(--safe-top) + 6px) 20px calc(var(--safe-bot) + 10px);}
     .your-pick-bar{background:var(--surface);border:1px solid rgba(201,149,42,.3);border-radius:3px;padding:5px 14px;text-align:center;width:100%;max-width:320px;flex-shrink:0;z-index:1;}
     .yp-label{font-family:'Rye',cursive;font-size:7px;letter-spacing:2px;color:var(--muted);}
     .yp-value{font-family:'Rye',cursive;font-size:clamp(13px,3.8vw,16px);color:var(--gold);letter-spacing:2px;}
+
+    /* spin counter */
+    .spin-counter{
+      display:flex;gap:8px;align-items:center;justify-content:center;
+      z-index:1;flex-shrink:0;
+    }
+    .spin-dot{
+      width:12px;height:12px;border-radius:50%;
+      border:1.5px solid var(--gold);background:transparent;
+      transition:background .3s;
+    }
+    .spin-dot.used{background:var(--gold);}
+    .spin-dot.win{background:var(--gold2);box-shadow:0 0 6px var(--gold2);}
+
     .wheel-wrap{position:relative;z-index:1;flex-shrink:0;width:min(64vw,52vh,270px);height:min(64vw,52vh,270px);}
     canvas{width:100%;height:100%;border-radius:50%;display:block;filter:drop-shadow(0 0 18px rgba(201,149,42,.4)) drop-shadow(0 2px 8px rgba(0,0,0,.8));transition:filter .3s;}
     canvas.glow{filter:drop-shadow(0 0 30px rgba(240,192,64,.65)) drop-shadow(0 2px 8px rgba(0,0,0,.8));}
@@ -120,6 +110,7 @@
     .ring{position:absolute;top:-9px;left:-9px;width:calc(100% + 18px);height:calc(100% + 18px);transform:rotate(-90deg);pointer-events:none;opacity:0;transition:opacity .3s;}
     .ring.on{opacity:1;}
     .ring circle{fill:none;stroke:var(--gold2);stroke-width:3;stroke-linecap:round;}
+
     .result-box{background:var(--surface);border-radius:4px;padding:7px 20px;width:100%;max-width:320px;border:1px solid var(--gold);outline:2px solid rgba(201,149,42,.18);outline-offset:3px;z-index:1;text-align:center;flex-shrink:0;position:relative;}
     .result-box::before,.result-box::after{content:'✦';position:absolute;top:50%;transform:translateY(-50%);color:var(--gold);font-size:11px;opacity:.55;}
     .result-box::before{left:7px;}.result-box::after{right:7px;}
@@ -127,25 +118,62 @@
     .rgenre{font-family:'Rye',cursive;font-size:clamp(15px,4.5vw,22px);letter-spacing:2px;color:var(--gold2);line-height:1.1;text-shadow:1px 1px 0 #3a1a00;transition:all .3s;}
     .rgenre.dim{color:var(--muted);font-size:clamp(12px,3.2vw,14px);}
     .rvibe{font-style:italic;font-size:clamp(8px,2vw,10px);color:var(--muted);margin-top:2px;}
+
     .btns{width:100%;max-width:320px;display:flex;flex-direction:column;gap:8px;z-index:1;flex-shrink:0;}
     .saloon-btn{width:100%;padding:12px;border-radius:3px;font-family:'Rye',cursive;font-size:clamp(12px,3.5vw,15px);letter-spacing:2px;cursor:pointer;text-align:center;background:var(--red);color:var(--gold2);border:1.5px solid var(--gold);outline:2px solid rgba(201,149,42,.18);outline-offset:2px;text-shadow:1px 1px 2px #000;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 3px 10px rgba(0,0,0,.6);transition:background .2s,transform .12s;touch-action:manipulation;-webkit-user-select:none;user-select:none;}
     .saloon-btn:active{transform:scale(0.97);}
     .saloon-btn:disabled{background:#2a1a08;color:var(--muted);border-color:var(--muted);cursor:default;transform:none;}
-    #changePick{background:#1a0a00;font-size:clamp(10px,2.8vw,12px);}
 
-    /* ── RESULT OVERLAY ── */
-    #resultOverlay{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(14,7,0,.95);gap:8px;padding:20px;overflow-y:auto;animation:fadeIn .4s ease;}
+    /* RESULT OVERLAY */
+    #resultOverlay{
+      position:fixed;inset:0;z-index:200;
+      display:none;flex-direction:column;
+      align-items:center;justify-content:center;
+      background:rgba(14,7,0,.95);
+      gap:10px;padding:24px 20px;
+      overflow-y:auto;
+      animation:fadeIn .4s ease;
+    }
     #resultOverlay.show{display:flex;}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-    .overlay-icon{font-size:64px;animation:pop .4s cubic-bezier(.36,1.56,.64,1);}
+    .overlay-icon{font-size:60px;animation:pop .4s cubic-bezier(.36,1.56,.64,1);flex-shrink:0;}
     @keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
-    .overlay-title{font-family:'Rye',cursive;font-size:clamp(18px,5.5vw,26px);letter-spacing:3px;text-align:center;line-height:1.3;}
+    .overlay-title{font-family:'Rye',cursive;font-size:clamp(18px,5.5vw,26px);letter-spacing:3px;text-align:center;line-height:1.3;flex-shrink:0;}
     .overlay-title.win{color:var(--gold2);text-shadow:0 0 20px rgba(240,192,64,.6);}
     .overlay-title.loss{color:var(--cream);}
-    .overlay-landed{font-family:'Rye',cursive;font-size:clamp(11px,3vw,14px);color:var(--gold);letter-spacing:2px;text-align:center;}
-    .overlay-artist{font-family:'Rye',cursive;font-size:clamp(10px,2.8vw,13px);color:var(--gold2);letter-spacing:1px;text-align:center;margin-top:2px;}
-    .overlay-vibe{font-style:italic;font-size:clamp(9px,2.5vw,12px);color:var(--muted);text-align:center;max-width:280px;}
-    .overlay-countdown{font-family:'Rye',cursive;font-size:clamp(10px,2.8vw,13px);color:var(--muted);letter-spacing:2px;text-align:center;margin-top:4px;}
+    .overlay-title.karaoke{color:#ff6b6b;text-shadow:0 0 20px rgba(255,107,107,.5);}
+    .overlay-landed{font-family:'Rye',cursive;font-size:clamp(11px,3vw,14px);color:var(--gold);letter-spacing:2px;text-align:center;flex-shrink:0;}
+    .overlay-artist{font-family:'Rye',cursive;font-size:clamp(10px,2.8vw,13px);color:var(--gold2);letter-spacing:1px;text-align:center;flex-shrink:0;}
+    .overlay-vibe{font-style:italic;font-size:clamp(9px,2.5vw,12px);color:var(--muted);text-align:center;max-width:280px;flex-shrink:0;}
+    .overlay-spins{font-family:'Rye',cursive;font-size:clamp(10px,2.8vw,12px);color:var(--gold);letter-spacing:1px;text-align:center;flex-shrink:0;}
+
+    .yt-link{
+      display:block;
+      width:100%;max-width:300px;
+      padding:18px 10px;
+      border-radius:4px;
+      font-family:'Rye',cursive;
+      font-size:clamp(14px,4vw,17px);
+      letter-spacing:2px;
+      text-align:center;
+      text-decoration:none;
+      touch-action:manipulation;
+      flex-shrink:0;
+      -webkit-user-select:none;user-select:none;
+    }
+    .yt-link.listen{background:#8b0000;color:#ffdd00;border:3px solid #ffdd00;box-shadow:0 0 20px rgba(255,221,0,.5);}
+    .yt-link.karaoke{background:#4a0080;color:#ff9fff;border:3px solid #ff9fff;box-shadow:0 0 20px rgba(255,159,255,.5);}
+    .yt-link:active{transform:scale(0.97);}
+
+    .overlay-spinagain{
+      width:100%;max-width:300px;padding:14px;border-radius:3px;
+      font-family:'Rye',cursive;font-size:clamp(12px,3.5vw,15px);
+      letter-spacing:2px;cursor:pointer;text-align:center;
+      background:#1a0a00;color:var(--gold);
+      border:1.5px solid var(--gold);
+      touch-action:manipulation;flex-shrink:0;
+    }
+    .overlay-spinagain:active{transform:scale(0.97);}
 
     /* confetti */
     #confetti-canvas{position:fixed;inset:0;z-index:201;pointer-events:none;}
@@ -165,37 +193,13 @@
 <div id="resultOverlay">
   <div class="overlay-icon" id="overlayIcon">🎉</div>
   <div class="overlay-title" id="overlayTitle">You called it!</div>
+  <div class="overlay-spins" id="overlaySpins"></div>
   <div class="overlay-landed" id="overlayLanded"></div>
   <div class="overlay-artist" id="overlayArtist"></div>
   <div class="overlay-vibe" id="overlayVibe"></div>
-  <div class="overlay-countdown" id="overlayCountdown"></div>
-  <br/>
-  <a id="overlayYTLink" 
-     target="_blank" 
-     rel="noopener noreferrer"
-     style="
-       display:none;
-       width:90%;
-       max-width:300px;
-       padding:20px 10px;
-       margin:0 auto;
-       border-radius:6px;
-       font-family:'Rye',cursive;
-       font-size:18px;
-       letter-spacing:2px;
-       text-align:center;
-       background:#8b0000;
-       color:#ffdd00;
-       border:3px solid #ffdd00;
-       text-decoration:none;
-       touch-action:manipulation;
-       box-shadow:0 0 25px rgba(255,221,0,0.6);
-     ">
-    ♪ PLAY ON YOUTUBE ♪
-  </a>
 </div>
 
-<!-- NATIONALITY SCREEN -->
+<!-- NATIONALITY -->
 <div class="screen active" id="natScreen">
   <header>
     <div class="logo">Music Roulette</div>
@@ -231,20 +235,20 @@
   </div>
 </div>
 
-<!-- PICK SCREEN -->
+<!-- PICK -->
 <div class="screen" id="pickScreen">
   <header>
     <div class="logo">Music Roulette</div>
     <div class="logo-rule"><hr/><span>Spin &middot; Discover &middot; Play</span><hr/></div>
   </header>
   <div class="pick-label">~ Place Your Wager ~</div>
-  <div class="pick-sub">Choose a genre before the wheel spins</div>
-  <div class="nat-badge" id="natBadge">Playing as: <span id="natBadgeVal">—</span></div>
+  <div class="pick-sub">Choose once — it rides for all 3 spins</div>
+  <div class="nat-badge">Playing as: <span id="natBadgeVal">—</span></div>
   <div class="genre-grid" id="genreGrid"></div>
   <button class="pick-confirm" id="pickConfirm">Choose a Genre First</button>
 </div>
 
-<!-- WHEEL SCREEN -->
+<!-- WHEEL -->
 <div class="screen" id="wheelScreen">
   <header>
     <div class="logo">Music Roulette</div>
@@ -253,6 +257,11 @@
   <div class="your-pick-bar">
     <div class="yp-label">~ Your Wager ~</div>
     <div class="yp-value" id="yourPickLabel">—</div>
+  </div>
+  <div class="spin-counter" id="spinCounter">
+    <div class="spin-dot" id="dot0"></div>
+    <div class="spin-dot" id="dot1"></div>
+    <div class="spin-dot" id="dot2"></div>
   </div>
   <div class="wheel-wrap">
     <svg class="ring" id="ring" viewBox="0 0 308 308">
@@ -270,7 +279,6 @@
   </div>
   <div class="btns">
     <button class="saloon-btn" id="spinBtn">Spin the Wheel</button>
-    <button class="saloon-btn" id="changePick">&#8592; Change My Wager</button>
   </div>
 </div>
 
@@ -280,7 +288,6 @@ const splash = document.getElementById('splash');
 document.getElementById('splashFill').style.width = '100%';
 setTimeout(() => { splash.classList.add('hide'); setTimeout(() => splash.remove(), 700); }, 2000);
 
-// ── ARTIST DATA: top 10 per genre per nationality ──
 const ARTISTS = {
   us: {
     "HIP HOP":    ["Drake","Kendrick Lamar","J. Cole","Eminem","Lil Wayne","Jay-Z","Kanye West","Cardi B","Travis Scott","Nicki Minaj"],
@@ -288,11 +295,11 @@ const ARTISTS = {
     "ROCK":       ["Bruce Springsteen","Guns N Roses","Aerosmith","Foo Fighters","Tom Petty","Eagles","Bon Jovi","Pearl Jam","Metallica","Red Hot Chili Peppers"],
     "ELECTRONIC": ["Skrillex","Marshmello","Deadmau5","Porter Robinson","Diplo","Flume","Zedd","Eric Prydz","Four Tet","Aphex Twin"],
     "POP":        ["Taylor Swift","Beyonce","Michael Jackson","Ariana Grande","Bruno Mars","Katy Perry","Lady Gaga","Justin Timberlake","Mariah Carey","Billie Eilish"],
-    "R&B":        ["Usher","Alicia Keys","H.E.R.","Frank Ocean","The Weeknd","Mary J Blige","R. Kelly","John Legend","Lauryn Hill","SZA"],
+    "R&B":        ["Usher","Alicia Keys","H.E.R.","Frank Ocean","The Weeknd","Mary J Blige","John Legend","Lauryn Hill","SZA","Stevie Wonder"],
     "CLASSICAL":  ["Leonard Bernstein","Samuel Barber","Aaron Copland","George Gershwin","Philip Glass","John Adams","Chet Baker","Joshua Bell","Yo-Yo Ma","Van Cliburn"],
     "REGGAE":     ["Chronixx","Damian Marley","Rebelution","Stick Figure","Steel Pulse","Groundation","Slightly Stoopid","SOJA","Pepper","Fortunate Youth"],
     "METAL":      ["Metallica","Slayer","Pantera","Megadeth","Tool","Lamb of God","Mastodon","System of a Down","Slipknot","Avenged Sevenfold"],
-    "LATIN":      ["Marc Anthony","Jennifer Lopez","Pitbull","Gloria Estefan","Jon Secada","Celia Cruz","Wyclef Jean","Carlos Santana","Ricky Martin","Shakira"],
+    "LATIN":      ["Marc Anthony","Jennifer Lopez","Pitbull","Gloria Estefan","Jon Secada","Celia Cruz","Carlos Santana","Ricky Martin","Shakira","Bad Bunny"],
     "COUNTRY":    ["Johnny Cash","Dolly Parton","Garth Brooks","Shania Twain","Blake Shelton","Luke Bryan","Kenny Rogers","Tim McGraw","Carrie Underwood","Chris Stapleton"],
     "BLUES":      ["B.B. King","Muddy Waters","Robert Johnson","Stevie Ray Vaughan","John Lee Hooker","Eric Clapton","Howlin Wolf","Buddy Guy","Etta James","Albert King"],
   },
@@ -314,9 +321,9 @@ const ARTISTS = {
     "HIP HOP":    ["Cartel de Santa","Santa Fe Klan","C-Kan","Dharius","Lefty SM","Gera MX","Eladio Carrion","Legado 7","Natanael Cano","Junior H"],
     "JAZZ":       ["Armando Peraza","Tino Contreras","Victor Ruiz Pazos","Juan Jose Calatayud","Cesar Orozco","Antonio Sanchez","Ramiro Flores","Fernando Otero","Eugenio Toussaint","Manuel Mijares"],
     "ROCK":       ["Mana","Cafe Tacvba","Molotov","El Tri","Jaguares","Los Caifanes","Soda Stereo","Hombres G","Los Prisioneros","Porter"],
-    "ELECTRONIC": ["Camelphat","3Ball MTY","Toy Selectah","Nortec Collective","Plastilina Mosh","Niña Dioz","Technicolors","Aarón Cruz","Murcof","Quiero Club"],
+    "ELECTRONIC": ["3Ball MTY","Toy Selectah","Nortec Collective","Plastilina Mosh","Nina Dioz","Technicolors","Aaron Cruz","Murcof","Quiero Club","Camelphat"],
     "POP":        ["Luis Miguel","Alejandro Fernandez","Paulina Rubio","Thalia","Gloria Trevi","Julieta Venegas","Natalia Lafourcade","Belinda","Christian Nodal","Ana Barbara"],
-    "R&B":        ["Ximena Sarinana","Carla Morrison","Mon Laferte","Silvana Estrada","Netta Barzilai","Elena Rose","Ninel Conde","Paty Cantu","Jesse y Joy","Yuridia"],
+    "R&B":        ["Ximena Sarinana","Carla Morrison","Mon Laferte","Silvana Estrada","Elena Rose","Ninel Conde","Paty Cantu","Jesse y Joy","Yuridia","Ha Ash"],
     "CLASSICAL":  ["Carlos Chavez","Silvestre Revueltas","Manuel M Ponce","Arturo Marquez","Federico Ibarra","Mario Lavista","Gustavo Dudamel","Horacio Franco","Gabriela Ortiz","Lan Shui"],
     "REGGAE":     ["Control Machete","Los Cafres","Inspector","La Maldita Vecindad","Los Pericos","Panteon Rococo","Sekta Core","La Raiz","La Chamba","Radio Burak"],
     "METAL":      ["Brujeria","Transmetal","Luzbel","Leprosy","Shub Niggurath","Masacre","Dekapited","Hacavitz","Cenotaph","Inquisition"],
@@ -343,71 +350,64 @@ const G = [
 
 const NAT_LABELS = { us:"🇺🇸 American", ca:"🇨🇦 Canadian", mx:"🇲🇽 Mexican" };
 
-let nationality = null, userPick = null, picked = null;
+let nationality=null, userPick=null, picked=null;
+let spinCount=0; // 0,1,2 — up to 3 spins
+const MAX_SPINS=3;
 
-// ── SCREENS ──
 const natScreen   = document.getElementById('natScreen');
 const pickScreen  = document.getElementById('pickScreen');
 const wheelScreen = document.getElementById('wheelScreen');
 const resultOverlay = document.getElementById('resultOverlay');
 
-function show(screen) {
-  [natScreen, pickScreen, wheelScreen].forEach(s => s.classList.remove('active'));
-  screen.classList.add('active');
-}
+function show(screen){ [natScreen,pickScreen,wheelScreen].forEach(s=>s.classList.remove('active')); screen.classList.add('active'); }
 
-// ── NATIONALITY SELECT ──
-document.querySelectorAll('.nat-card').forEach(card => {
-  card.addEventListener('click', () => {
-    nationality = card.dataset.nat;
-    document.getElementById('natBadgeVal').textContent = NAT_LABELS[nationality];
-    show(pickScreen);
-    resetPickScreen();
+// Nationality
+document.querySelectorAll('.nat-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    nationality=card.dataset.nat;
+    document.getElementById('natBadgeVal').textContent=NAT_LABELS[nationality];
+    show(pickScreen); resetPickScreen();
   });
 });
 
-// ── GENRE GRID ──
-const grid = document.getElementById('genreGrid');
-const confirmBtn = document.getElementById('pickConfirm');
-
-G.forEach(g => {
-  const btn = document.createElement('button');
-  btn.className = 'genre-pick-btn';
-  btn.textContent = g.name;
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.genre-pick-btn').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    userPick = g;
-    confirmBtn.textContent = 'Wager on ' + g.name;
+// Genre grid
+const grid=document.getElementById('genreGrid');
+const confirmBtn=document.getElementById('pickConfirm');
+G.forEach(g=>{
+  const btn=document.createElement('button');
+  btn.className='genre-pick-btn'; btn.textContent=g.name;
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.genre-pick-btn').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected'); userPick=g;
+    confirmBtn.textContent='Wager on '+g.name;
     confirmBtn.classList.add('ready');
   });
   grid.appendChild(btn);
 });
 
-confirmBtn.addEventListener('click', () => {
-  if (!userPick) return;
-  document.getElementById('yourPickLabel').textContent = userPick.name;
-  show(wheelScreen);
-  resetWheel();
+confirmBtn.addEventListener('click',()=>{
+  if(!userPick) return;
+  document.getElementById('yourPickLabel').textContent=userPick.name;
+  spinCount=0; updateDots();
+  show(wheelScreen); resetWheel();
 });
 
-document.getElementById('changePick').addEventListener('click', () => {
-  show(pickScreen);
-  resetPickScreen();
-  rg.classList.add('dim');
-  rg.textContent = 'Awaiting the Spin';
-  rv.textContent = "Fate is in the wheel's hands...";
-  state = 'idle'; picked = null;
-});
-
-function resetPickScreen() {
-  document.querySelectorAll('.genre-pick-btn').forEach(b => b.classList.remove('selected'));
-  confirmBtn.textContent = 'Choose a Genre First';
+function resetPickScreen(){
+  document.querySelectorAll('.genre-pick-btn').forEach(b=>b.classList.remove('selected'));
+  confirmBtn.textContent='Choose a Genre First';
   confirmBtn.classList.remove('ready');
-  userPick = null;
+  userPick=null;
 }
 
-// ── WHEEL ──
+function updateDots(){
+  for(let i=0;i<MAX_SPINS;i++){
+    const d=document.getElementById('dot'+i);
+    d.className='spin-dot';
+    if(i<spinCount) d.classList.add('used');
+  }
+}
+
+// Wheel
 const cv=document.getElementById('c'), ct=cv.getContext('2d');
 const spinBtn=document.getElementById('spinBtn');
 const rg=document.getElementById('rg'), rv=document.getElementById('rv');
@@ -417,16 +417,16 @@ const N=G.length, SL=2*Math.PI/N;
 const RAD=150, CIRC=2*Math.PI*RAD;
 arc.style.strokeDasharray=CIRC; arc.style.strokeDashoffset=CIRC;
 
-let angle=0, spd=0, raf=null, state='idle', t0=null;
-const DUR=5000, VMAX=0.22, FRIC=0.985;
+let angle=0,spd=0,raf=null,state='idle',t0=null;
+const DUR=5000,VMAX=0.22,FRIC=0.985;
 
-document.fonts.load("bold 16px 'Rye'").then(() => draw(0));
+document.fonts.load("bold 16px 'Rye'").then(()=>draw(0));
 
-function draw(a) {
-  const S=cv.width, hx=S/2, hy=S/2, r=hx-4;
+function draw(a){
+  const S=cv.width,hx=S/2,hy=S/2,r=hx-4;
   ct.clearRect(0,0,S,S);
   for(let i=0;i<N;i++){
-    const sa=a+i*SL, ea=sa+SL, g=G[i], m=sa+SL/2;
+    const sa=a+i*SL,ea=sa+SL,g=G[i],m=sa+SL/2;
     const grd=ct.createRadialGradient(hx,hy,0,hx,hy,r);
     grd.addColorStop(0,g.c2); grd.addColorStop(1,g.c1);
     ct.beginPath(); ct.moveTo(hx,hy); ct.arc(hx,hy,r,sa,ea); ct.closePath();
@@ -446,12 +446,12 @@ function draw(a) {
   ct.font=`bold ${S*.036}px 'Rye', serif`;
   ct.textAlign='center'; ct.textBaseline='middle';
   for(let i=0;i<N;i++){
-    const m=a+i*SL+SL/2, lr=r*.52;
+    const m=a+i*SL+SL/2,lr=r*.52;
     ct.save();
-    ct.translate(hx+Math.cos(m)*lr, hy+Math.sin(m)*lr);
+    ct.translate(hx+Math.cos(m)*lr,hy+Math.sin(m)*lr);
     ct.rotate(m);
     ct.fillStyle='rgba(0,0,0,0.9)'; ct.fillText(G[i].name,1.5,1.5);
-    ct.fillStyle='#f0c040';         ct.fillText(G[i].name,0,0);
+    ct.fillStyle='#f0c040'; ct.fillText(G[i].name,0,0);
     ct.restore();
   }
   const hr=S*.075;
@@ -464,12 +464,12 @@ function draw(a) {
   ct.strokeStyle='rgba(201,149,42,.28)'; ct.lineWidth=1; ct.stroke();
 }
 
-function pickGenre(a) {
+function pickGenre(a){
   const n=((0-a)%(2*Math.PI)+2*Math.PI)%(2*Math.PI);
   return G[Math.floor(n/SL)%N];
 }
 
-function tick(ts) {
+function tick(ts){
   if(!t0) t0=ts;
   const el=ts-t0;
   if(state==='spinning'){
@@ -484,58 +484,114 @@ function tick(ts) {
   angle+=spd; draw(angle); raf=requestAnimationFrame(tick);
 }
 
-function land() {
-  picked = pickGenre(angle);
-  rg.classList.remove('dim');
-  rg.textContent = picked.name;
-  rv.textContent = picked.vibe;
-  const won = userPick && userPick.name === picked.name;
-  // Pick a random artist for this genre + nationality
+function land(){
+  picked=pickGenre(angle);
+  rg.classList.remove('dim'); rg.textContent=picked.name; rv.textContent=picked.vibe;
+  spinCount++;
+  updateDots();
+
+  const won = userPick && userPick.name===picked.name;
   const pool = ARTISTS[nationality][picked.name];
-  const artist = pool[Math.floor(Math.random() * pool.length)];
-  setTimeout(() => showResult(won, artist), 400);
+  const artist = pool[Math.floor(Math.random()*pool.length)];
+  const isLastSpin = spinCount>=MAX_SPINS;
+
+  setTimeout(()=>showResult(won, artist, isLastSpin), 400);
 }
 
-function showResult(won, artist) {
-  document.getElementById('overlayIcon').textContent = won ? '🎉' : '🎲';
+function showResult(won, artist, isLast){
+  const overlay = resultOverlay;
+  document.getElementById('overlayIcon').textContent = won ? '🎉' : (isLast ? '🎤' : '🎲');
+
   const title = document.getElementById('overlayTitle');
-  title.textContent = won ? 'You called it, Partner!' : 'The Wheel Decides!';
-  title.className = 'overlay-title ' + (won ? 'win' : 'loss');
+  const spinsEl = document.getElementById('overlaySpins');
+
+  if(won){
+    title.textContent = 'You called it, Partner!';
+    title.className = 'overlay-title win';
+    spinsEl.textContent = '~ You won on spin ' + spinCount + ' of 3 ~';
+  } else if(isLast){
+    title.textContent = 'Time to Sing, Partner!';
+    title.className = 'overlay-title karaoke';
+    spinsEl.textContent = '~ You lost all 3 spins ~';
+  } else {
+    title.textContent = 'Not This Time!';
+    title.className = 'overlay-title loss';
+    spinsEl.textContent = '~ Spin ' + spinCount + ' of 3 ~';
+  }
+
   document.getElementById('overlayLanded').textContent = '~ Landed on: ' + picked.name + ' ~';
-  document.getElementById('overlayArtist').textContent = '♪ Playing: ' + artist + ' ♪';
+  document.getElementById('overlayArtist').textContent = won ? '♪ Playing: ' + artist + ' ♪' : (isLast ? '🎤 Karaoke: ' + artist : '');
   document.getElementById('overlayVibe').textContent = won
     ? "Your instincts are as sharp as a sheriff's aim!"
-    : (userPick ? 'You wagered on ' + userPick.name + ' — better luck next spin!' : picked.vibe);
+    : isLast
+      ? "The wheel has spoken — now open your mouth & sing!"
+      : 'You wagered on ' + userPick.name + ' — ' + (MAX_SPINS - spinCount) + ' spin' + (MAX_SPINS-spinCount===1?'':'s') + ' left!';
 
-  const q = encodeURIComponent(artist + ' most popular song');
-  const url = 'https://www.youtube.com/results?search_query=' + q;
+  // Clear previous buttons
+  const existing = overlay.querySelectorAll('.yt-link, .overlay-spinagain');
+  existing.forEach(e=>e.remove());
 
-  const countdown = document.getElementById('overlayCountdown');
-  countdown.innerHTML = '<a href="' + url + '" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:16px;padding:18px 24px;background:#8b0000;color:#ffdd00;border:3px solid #ffdd00;border-radius:6px;font-family:Rye,cursive;font-size:18px;letter-spacing:2px;text-decoration:none;text-align:center;box-shadow:0 0 25px rgba(255,221,0,0.6);">♪ PLAY ON YOUTUBE ♪</a>';
+  if(won || isLast){
+    // Show YouTube button
+    const q = won
+      ? encodeURIComponent(artist + ' most popular song')
+      : encodeURIComponent(artist + ' karaoke');
+    const url = 'https://www.youtube.com/results?search_query=' + q;
+    const link = document.createElement('a');
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.className = 'yt-link ' + (won ? 'listen' : 'karaoke');
+    link.textContent = won ? '♪ Play on YouTube ♪' : '🎤 Sing on YouTube 🎤';
+    overlay.appendChild(link);
 
-  resultOverlay.classList.add('show');
-  if (won) launchConfetti();
+    // Auto reset when they come back
+    function handleVisibility(){
+      if(!document.hidden){
+        document.removeEventListener('visibilitychange', handleVisibility);
+        setTimeout(()=>resetToStart(), 800);
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibility);
 
-  // Auto reset after 8 seconds if they don't tap
-  setTimeout(() => {
-    stopConfetti();
-    resultOverlay.classList.remove('show');
-    resetToStart();
-  }, 8000);
+    if(won) launchConfetti();
+
+  } else {
+    // Show Spin Again button
+    const btn = document.createElement('button');
+    btn.className = 'overlay-spinagain';
+    btn.textContent = '↺ Spin Again (' + (MAX_SPINS-spinCount) + ' left)';
+    btn.addEventListener('click', ()=>{
+      overlay.classList.remove('show');
+      stopConfetti();
+      resetWheel();
+    });
+    overlay.appendChild(btn);
+  }
+
+  overlay.classList.add('show');
 }
 
-function resetWheel() {
-  if (raf) cancelAnimationFrame(raf);
-  state = 'idle'; t0 = null; spd = 0; picked = null;
-  spinBtn.disabled = false; spinBtn.textContent = 'Spin the Wheel';
-  rg.classList.add('dim'); rg.textContent = 'Awaiting the Spin';
-  rv.textContent = "Fate is in the wheel's hands...";
-  arc.style.strokeDashoffset = CIRC;
+function resetWheel(){
+  if(raf) cancelAnimationFrame(raf);
+  state='idle'; t0=null; spd=0; picked=null;
+  spinBtn.disabled=false; spinBtn.textContent='Spin the Wheel';
+  rg.classList.add('dim'); rg.textContent='Awaiting the Spin';
+  rv.textContent="Fate is in the wheel's hands...";
+  arc.style.strokeDashoffset=CIRC;
   ring.classList.remove('on'); cv.classList.remove('glow');
   draw(angle);
 }
 
-function spin() {
+function resetToStart(){
+  nationality=null; userPick=null; picked=null; spinCount=0;
+  stopConfetti();
+  resultOverlay.classList.remove('show');
+  resetWheel();
+  show(natScreen);
+}
+
+function spin(){
   if(state==='spinning'||state==='coast') return;
   if(raf) cancelAnimationFrame(raf);
   state='spinning'; t0=null; spd=0; picked=null;
@@ -550,12 +606,12 @@ function spin() {
 spinBtn.addEventListener('click', spin);
 draw(0);
 
-// ── CONFETTI ──
+// Confetti
 const confCv=document.getElementById('confetti-canvas'), confCt=confCv.getContext('2d');
-let confetti=[], confRaf=null, confRunning=false;
+let confetti=[],confRaf=null,confRunning=false;
 const COLORS=['#f0c040','#c9952a','#ff4444','#ffffff','#ffaa00','#ffe066'];
 function resizeConf(){ confCv.width=window.innerWidth; confCv.height=window.innerHeight; }
-window.addEventListener('resize', resizeConf); resizeConf();
+window.addEventListener('resize',resizeConf); resizeConf();
 function makeParticle(){ return {x:Math.random()*confCv.width,y:-10,r:Math.random()*6+3,color:COLORS[Math.floor(Math.random()*COLORS.length)],tilt:0,tiltAngle:0,tiltSpeed:Math.random()*.1+.05,speed:Math.random()*3+2,opacity:1}; }
 function launchConfetti(){ confRunning=true; confetti=[]; for(let i=0;i<120;i++) confetti.push(makeParticle()); animateConfetti(); }
 function animateConfetti(){
